@@ -3,17 +3,16 @@ package utils;
 import com.ufro.netblend.models.Registro;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class CSV {
+
     //Codigo para leer el csv
     public ArrayList<Registro> Registros = new ArrayList<Registro>();
-    public void leerArchivo(){
+    public List<Registro> leerArchivo(){
 
         Registro Registro;
         String[] datos;
@@ -39,13 +38,6 @@ public class CSV {
         }catch(Exception e){
             System.out.println(e);
         }
-        imprimirProducto(Registros);
-    }
-
-    public void imprimirProducto(ArrayList<Registro> Registros) {
-        for (Registro Registro : Registros) {
-            System.out.println(Registro);
-        }
-
+    return Registros;
     }
 }
