@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 
 @SpringBootApplication
@@ -19,7 +20,6 @@ public class NetblendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NetblendApplication.class, args);
 	}
-
 	@GetMapping("/ultimos-usuarios")
 	public List<Registro>  realizarPeticiones() {
 		CSV nuevoCSV = new CSV();
@@ -50,8 +50,6 @@ public class NetblendApplication {
 
 		return usuariosPopulares;
 	}
-
-
 	@GetMapping("/usuarios-inactivos")
 	private static List<Registro> obtenerUsuariosInactivosConMasSeguidores() {
 		CSV nuevoCSV = new CSV();
