@@ -21,12 +21,27 @@ public class NetblendApplication {
 		RegistroController  peticiones = new RegistroController();
 		List<Registro> registros = nuevoCSV.leerArchivo(); // Obtener la lista de registros desde el método leerArchivo()
 
-	/*	List<Registro> ultimos10Usuarios = peticiones.obtenerUltimos10Usuarios(registros);
+		// Peticiones
+		List<Registro> ultimos10Usuarios = RegistroController.obtenerUltimos10Usuarios(registros);
+		//List<Registro> usuariosPopulares = RegistroController.obtenerUsuariosPopulares(registros);
+		//List<Registro> usuariosInactivosConMasSeguidores = obtenerUsuariosInactivosConMasSeguidores(registros);
+
 		// Imprimir los resultados
 		System.out.println("Últimos 10 usuarios que se han conectado más recientemente:");
-		peticiones.imprimirRegistros(ultimos10Usuarios);
+		imprimirRegistros(ultimos10Usuarios);
 		System.out.println();
-*/
+
+		System.out.println("Usuario(s) más popular(es):");
+		//imprimirRegistros(usuariosPopulares);
+		System.out.println();
+
+		System.out.println("Usuario(s) inactivo(s) con más seguidores:");
+		//imprimirRegistros(usuariosInactivosConMasSeguidores);
+
 	}
+	public static void imprimirRegistros(List<Registro> registros) {
+		for (Registro registro : registros) {
+			System.out.println(registro);
+		}}
 }
 
